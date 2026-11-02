@@ -1,0 +1,27 @@
+{
+  "schema_version": "1.0",
+  "component": {
+    "name": "gridd",
+    "version": "2.4.1",
+    "release_date": "2026-03-09"
+  },
+  "artifact": {
+    "file": "artifact.bin",
+    "sha256": "43396a59dbe7c031807a6eee7f1d7ddc509166b6166770d7390875d7b222fbf7",
+    "bytes": 32
+  },
+  "dependencies": [
+    {
+      "name": "libfast",
+      "min_version": "1.8.0"
+    },
+    {
+      "name": "libslow",
+      "min_version": "0.9.12"
+    },
+    {
+      "name": "libjson",
+      "min_version": "3.0.0"
+    }
+  ]
+}

@@ -1,0 +1,111 @@
+自检报告 — 按汇率精确聚合交易金额（aggregate.json）
+生成时间：2026-11-02（本地时区 Asia/Shanghai）
+输入（只读）：input\transactions.csv  表头 txn_id,account,date,currency,amount_cents,fx_rate，8 行数据
+产物：aggregate.json（UTF-8 无 BOM，568 字节，含结尾换行）
+
+== 1. 换算规则实现 ==
+usd_cents = amount_cents × fx_rate，用 decimal.Decimal 做十进制精确乘法，
+再 quantize(Decimal("1"), rounding=ROUND_HALF_UP)（.5 远离零进位），最后 int()。
+全过程无 float，无二进制浮点误差。
+
+== 2. 逐笔换算（含 .5 边界）==
+txn_id | account    | date       | cur | amount_cents | fx_rate | 精确乘积      | usd_cents
+T001   | acct-north | 2026-01-05 | EUR | 12500        | 1.0875  | 13593.7500    | 13594
+T002   | acct-north | 2026-01-19 | GBP | 4300         | 1.2650  | 5439.5000     | 5440   <-- 正好 .5，向上进位
+T003   | acct-south | 2026-02-02 | EUR | 999          | 1.0875  | 1086.4125     | 1086
+T004   | acct-south | 2026-02-11 | USD | 20000        | 1.0000  | 20000.0000    | 20000
+T005   | acct-north | 2026-02-23 | EUR | 7250         | 1.0890  | 7895.2500     | 7895
+T006   | acct-east  | 2026-03-01 | GBP | 1500         | 1.2650  | 1897.5000     | 1898   <-- 正好 .5，向上进位
+T007   | acct-east  | 2026-03-14 | EUR | 4550         | 1.0910  | 4964.0500     | 4964
+T008   | acct-south | 2026-03-14 | EUR | 4550         | 1.0910  | 4964.0500     | 4964
+命中 .5 边界的 tx 共 2 笔：T002、T006。
+若错用「银行家舍入」会得到 5439.5->5440（偶）、1897.5->1898（偶）；此处两者碰巧都向上，
+故额外用合成样本验证了方向性（见第 5 节 tie +.5 / tie -.5 两例，均远离零进位）。
+
+== 3. 聚合（数字均可指回第 2 节逐笔值）==
+accounts:
+  acct-north:
+      13594(T001) + 5440(T002) + 7895(T005) = 26929；最大 13594 属 T001
+      -> {"count": 3, "usd_cents": 26929, "largest_txn": "T001"}
+  acct-south:
+      1086(T003) + 20000(T004) + 4964(T008) = 26050；最大 20000 属 T004
+      -> {"count": 3, "usd_cents": 26050, "largest_txn": "T004"}
+  acct-east:
+      1898(T006) + 4964(T007) = 6862；最大 4964 只有 T007（T008 同值但属 acct-south，不构成并列）
+      -> {"count": 2, "usd_cents": 6862, "largest_txn": "T007"}
+monthly:
+  2026-01: 13594(T001) + 5440(T002) = 19034, count=2
+  2026-02: 1086(T003) + 20000(T004) + 7895(T005) = 28981, count=3
+  2026-03: 1898(T006) + 4964(T007) + 4964(T008) = 11826, count=3
+grand_total_cents = 26929 + 26050 + 6862 = 59841
+                    = 19034 + 28981 + 11826 = 59841   （两条聚合路径相等，且直接逐笔求和亦为 59841）
+
+== 4. 契约逐项核对（R05）==
+[PASS] 顶层键恰好三个且顺序为 accounts, monthly, grand_total_cents；无多余键
+[PASS] accounts 每个值恰好 count / usd_cents / largest_txn 三键
+[PASS] monthly 每个值恰好 count / usd_cents 两键；键为 date 前 7 字符 YYYY-MM
+[PASS] 所有数值为 JSON 整数：json.loads 后 type(x) is int（非 str、非 float、非 bool）
+[PASS] grand_total_cents 为 int，且 == sum(accounts.usd_cents) == sum(monthly.usd_cents)
+[PASS] sum(count)=8 == 输入数据行数 8 == sum(monthly.count)
+[PASS] largest_txn 规则：同账户内 usd_cents 最大，并列取 txn_id 字典序最小（本次无并列）
+[PASS] 编码 UTF-8 且无 BOM（文件前 3 字节 != EF BB BF）；所有 txn_id 在输入中唯一
+[PASS] accounts 块、monthly 块与「独立重算」完全相等（重算代码见第 6 节，不是复用同一份聚合逻辑）
+
+== 5. 边界样本（合成数据，仅内存中计算，未写入 input）==
+(R07 要求：空值 / 0 / 最大项 / 缺字段)
+  tie +.5                amount=1           fx=0.5      -> 1            期望 1            PASS
+  tie -.5（远离零）      amount=-1          fx=0.5      -> -1           期望 -1           PASS
+  tie +.5 big            amount=3           fx=1.5      -> 5            期望 5            PASS
+  zero amount            amount=0           fx=1.0875   -> 0            期望 0            PASS
+  zero rate              amount=12500       fx=0        -> 0            期望 0            PASS
+  just below tie         amount=1           fx=0.4999   -> 0            期望 0            PASS
+  just above tie         amount=1           fx=0.5001   -> 1            期望 1            PASS
+  max-ish                amount=999999999999 fx=1.091   -> 1090999999999 期望 1090999999999 PASS
+  no rounding needed     amount=20000       fx=1.0000   -> 20000        期望 20000        PASS
+空值/缺字段：
+  amount_cents 为空 -> decimal.InvalidOperation
+  fx_rate 为空或非数字 -> decimal.InvalidOperation
+  （本批输入无此类行：8 行 6 字段全部非空，empty_fields=[]，无负金额，故未做容错替换、
+    也未擅自补默认值——按 R04 不推算。）
+未给出但可能想知道的数据：无。输入表所有契约要求的字段均有值；
+currency 一列未参与任何产出（契约未要求），仅原样保留在逐笔表中。
+
+== 6. 可重跑脚本（把以下内容存为 recompute.py 放在本工作目录，python recompute.py 即可复现）==
+import csv, json
+from decimal import Decimal, ROUND_HALF_UP
+
+def usd_cents(amount_cents, fx_rate):
+    return int((Decimal(amount_cents) * Decimal(fx_rate))
+               .quantize(Decimal("1"), rounding=ROUND_HALF_UP))
+
+rows = list(csv.DictReader(open("input/transactions.csv", encoding="utf-8-sig", newline="")))
+accounts, monthly = {}, {}
+for r in rows:
+    c = usd_cents(r["amount_cents"], r["fx_rate"])
+    a = accounts.setdefault(r["account"], {"count": 0, "usd_cents": 0, "best": (-10**18, "")})
+    a["count"] += 1
+    a["usd_cents"] += c
+    if c > a["best"][0] or (c == a["best"][0] and r["txn_id"] < a["best"][1]):
+        a["best"] = (c, r["txn_id"])
+    m = monthly.setdefault(r["date"][:7], {"count": 0, "usd_cents": 0})
+    m["count"] += 1
+    m["usd_cents"] += c
+
+out = {
+    "accounts": {k: {"count": v["count"], "usd_cents": v["usd_cents"], "largest_txn": v["best"][1]}
+                 for k, v in accounts.items()},
+    "monthly": monthly,
+    "grand_total_cents": sum(v["usd_cents"] for v in accounts.values()),
+}
+with open("aggregate.json", "w", encoding="utf-8", newline="\n") as f:
+    json.dump(out, f, ensure_ascii=False, indent=2)
+    f.write("\n")
+assert out["grand_total_cents"] == sum(v["usd_cents"] for v in monthly.values())
+print("OK", out["grand_total_cents"])
+
+== 7. 检查命令与退出码 ==
+命令1（生成）：python -  <<'PY' ... （第 6 节脚本 + 写 aggregate.json）  ->  [exit code: 0]
+命令2（读回校验）：python -  <<'PY' ... （键集/类型/双路径合计/独立重算，逐项打印 PASS/FAIL）  ->  [exit code: 0]
+  末行实测输出：FAILS: []      （28 项检查全 PASS，0 FAIL）
+命令3（边界样本）：python -  <<'PY' ... （tie 检测 + 9 个合成样本 + 空值处理）  ->  [exit code: 0]
+  实测输出：TIES: ['T002', 'T006']；PASS 9/9；rows=8 empty_fields=[] negative_amounts=[]

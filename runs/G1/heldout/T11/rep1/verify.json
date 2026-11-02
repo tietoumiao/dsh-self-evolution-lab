@@ -1,0 +1,6 @@
+{
+  "count": 5,
+  "total": 602,
+  "command": "awk -F, 'NR>1{sub(/\\r$/,\"\"); if($0~/^[[:space:]]*#/)next; v=$2; gsub(/^[[:space:]]+|[[:space:]]+$/,\"\",v); if(v==\"\"||v!~/^-?[0-9]+$/)next; c++; t+=v} END{printf \"count=%d total=%d\", c, t}' input/data.csv",
+  "output": "count=5 total=602"
+}

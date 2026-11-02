@@ -1,0 +1,105 @@
+{
+  "genome": "G2",
+  "split": "dev",
+  "genome_sha256": "b95a6c8e04402f2ba45ed61cc14e16d79dcd86767034f6a9890659de633a2d44",
+  "genome_chars": 798,
+  "reps": 2,
+  "runs": [
+    {
+      "task": "T01",
+      "rep": 1,
+      "axis": "code",
+      "weight": 1,
+      "run_dir": "<workspace>/agi/runs/G2/dev/T01/rep1",
+      "run_dir_rel": "agi/runs/G2/dev/T01/rep1"
+    },
+    {
+      "task": "T01",
+      "rep": 2,
+      "axis": "code",
+      "weight": 1,
+      "run_dir": "<workspace>/agi/runs/G2/dev/T01/rep2",
+      "run_dir_rel": "agi/runs/G2/dev/T01/rep2"
+    },
+    {
+      "task": "T02",
+      "rep": 1,
+      "axis": "code",
+      "weight": 1,
+      "run_dir": "<workspace>/agi/runs/G2/dev/T02/rep1",
+      "run_dir_rel": "agi/runs/G2/dev/T02/rep1"
+    },
+    {
+      "task": "T02",
+      "rep": 2,
+      "axis": "code",
+      "weight": 1,
+      "run_dir": "<workspace>/agi/runs/G2/dev/T02/rep2",
+      "run_dir_rel": "agi/runs/G2/dev/T02/rep2"
+    },
+    {
+      "task": "T03",
+      "rep": 1,
+      "axis": "spec",
+      "weight": 1,
+      "run_dir": "<workspace>/agi/runs/G2/dev/T03/rep1",
+      "run_dir_rel": "agi/runs/G2/dev/T03/rep1"
+    },
+    {
+      "task": "T03",
+      "rep": 2,
+      "axis": "spec",
+      "weight": 1,
+      "run_dir": "<workspace>/agi/runs/G2/dev/T03/rep2",
+      "run_dir_rel": "agi/runs/G2/dev/T03/rep2"
+    },
+    {
+      "task": "T04",
+      "rep": 1,
+      "axis": "spec",
+      "weight": 1,
+      "run_dir": "<workspace>/agi/runs/G2/dev/T04/rep1",
+      "run_dir_rel": "agi/runs/G2/dev/T04/rep1"
+    },
+    {
+      "task": "T04",
+      "rep": 2,
+      "axis": "spec",
+      "weight": 1,
+      "run_dir": "<workspace>/agi/runs/G2/dev/T04/rep2",
+      "run_dir_rel": "agi/runs/G2/dev/T04/rep2"
+    },
+    {
+      "task": "T05",
+      "rep": 1,
+      "axis": "computation",
+      "weight": 1,
+      "run_dir": "<workspace>/agi/runs/G2/dev/T05/rep1",
+      "run_dir_rel": "agi/runs/G2/dev/T05/rep1"
+    },
+    {
+      "task": "T05",
+      "rep": 2,
+      "axis": "computation",
+      "weight": 1,
+      "run_dir": "<workspace>/agi/runs/G2/dev/T05/rep2",
+      "run_dir_rel": "agi/runs/G2/dev/T05/rep2"
+    },
+    {
+      "task": "T06",
+      "rep": 1,
+      "axis": "computation",
+      "weight": 1,
+      "run_dir": "<workspace>/agi/runs/G2/dev/T06/rep1",
+      "run_dir_rel": "agi/runs/G2/dev/T06/rep1"
+    },
+    {
+      "task": "T06",
+      "rep": 2,
+      "axis": "computation",
+      "weight": 1,
+      "run_dir": "<workspace>/agi/runs/G2/dev/T06/rep2",
+      "run_dir_rel": "agi/runs/G2/dev/T06/rep2"
+    }
+  ]
+}
