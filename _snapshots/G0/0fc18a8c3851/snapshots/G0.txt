@@ -1,0 +1,7 @@
+<RUN_RULES>
+# ruleset 2026-11-02.v1 | rules=0
+<discipline>
+（本轮无附加纪律规则；按任务书的要求与你自己的默认习惯执行。）
+</discipline>
+以下规则优先于你的默认习惯。
+</RUN_RULES>

@@ -1,0 +1,36 @@
+{
+  "schema": 1,
+  "total": 13,
+  "levels": {
+    "DEBUG": 1,
+    "INFO": 7,
+    "WARN": 2,
+    "ERROR": 3
+  },
+  "services": {
+    "api": {
+      "count": 5,
+      "error_count": 3,
+      "max_ms": 9999
+    },
+    "web": {
+      "count": 3,
+      "error_count": 1,
+      "max_ms": 120
+    },
+    "db": {
+      "count": 3,
+      "error_count": 1,
+      "max_ms": 1503
+    },
+    "cache": {
+      "count": 2,
+      "error_count": 0,
+      "max_ms": 3
+    }
+  },
+  "slowest": [
+    {"line_no": 10, "svc": "cache", "ms": 2},
+    {"line_no": 9, "svc": "cache", "ms": 3}
+  ]
+}

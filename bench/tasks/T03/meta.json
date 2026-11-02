@@ -1,0 +1,9 @@
+{
+  "task": "T03",
+  "title": "生成发布元数据清单",
+  "split": "dev",
+  "axis": "spec",
+  "weight": 1,
+  "time_budget_min": 7,
+  "requires": ["python"]
+}

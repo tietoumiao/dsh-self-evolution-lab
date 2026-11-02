@@ -1,0 +1,9 @@
+{
+  "task": "T01",
+  "title": "修好时长解析与格式化模块",
+  "split": "dev",
+  "axis": "code",
+  "weight": 1,
+  "time_budget_min": 8,
+  "requires": ["python"]
+}

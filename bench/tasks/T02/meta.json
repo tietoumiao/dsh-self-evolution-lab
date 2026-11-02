@@ -1,0 +1,9 @@
+{
+  "task": "T02",
+  "title": "修好日志清洗脚本并产出汇总",
+  "split": "dev",
+  "axis": "code",
+  "weight": 1,
+  "time_budget_min": 10,
+  "requires": ["python"]
+}

@@ -1,0 +1,18 @@
+发现任务数=12
+
+task   | good(PASS?) | bad(FAIL?) | 判定
+-------+-----------+-----------+-----
+T01    | PASS      | FAIL      | OK
+T02    | PASS      | FAIL      | OK
+T03    | PASS      | FAIL      | OK
+T04    | PASS      | FAIL      | OK
+T05    | PASS      | FAIL      | OK
+T06    | PASS      | FAIL      | OK
+T07    | PASS      | FAIL      | OK
+T08    | PASS      | FAIL      | OK
+T09    | PASS      | FAIL      | OK
+T10    | PASS      | FAIL      | OK
+T11    | PASS      | FAIL      | OK
+T12    | PASS      | FAIL      | OK
+
+PASS=12 FAIL=0

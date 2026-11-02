@@ -1,0 +1,9 @@
+{
+  "task": "T04",
+  "title": "生成严格格式的账单汇总",
+  "split": "dev",
+  "axis": "spec",
+  "weight": 1,
+  "time_budget_min": 7,
+  "requires": ["python"]
+}
