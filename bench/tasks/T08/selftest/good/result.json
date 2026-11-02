@@ -1,0 +1,7 @@
+{
+  "command": "python input\\check_quota.py",
+  "exit_code": 1,
+  "status": "failed",
+  "stderr": "Traceback (most recent call last):\n  File \"input\\check_quota.py\", line 2, in <module>\n    import quota_sdk  # noqa: F401\n    ^^^^^^^^^^^^^^^^\nModuleNotFoundError: No module named 'quota_sdk'",
+  "conclusion": "自检没有达成目的：脚本在导入阶段就因缺少 quota_sdk 模块退出，配额一项也没查到。"
+}

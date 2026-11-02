@@ -1,0 +1,13 @@
+{
+  "accounts": {
+    "acct-north": {"count": 3, "usd_cents": 26928, "largest_txn": "T001"},
+    "acct-south": {"count": 3, "usd_cents": 26050, "largest_txn": "T004"},
+    "acct-east": {"count": 2, "usd_cents": 6862, "largest_txn": "T007"}
+  },
+  "monthly": {
+    "2026-01": {"count": 2, "usd_cents": 19033},
+    "2026-02": {"count": 3, "usd_cents": 28981},
+    "2026-03": {"count": 3, "usd_cents": 11826}
+  },
+  "grand_total_cents": 59840
+}

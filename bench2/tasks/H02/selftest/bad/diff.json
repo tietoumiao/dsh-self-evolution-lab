@@ -1,0 +1,12 @@
+{
+  "schema": 1,
+  "authority": "input/schema.sql",
+  "conflicts": [
+    {
+      "field": "retry_timeout_ms",
+      "values": {"config": 3000, "deploy": 3000, "schema": 2500},
+      "expected": 3000
+    }
+  ],
+  "consistent_fields": ["batch_size", "max_connections", "queue_capacity", "shard_count"]
+}

@@ -1,0 +1,14 @@
+{
+  "files": [
+    {
+      "name": "part1.txt",
+      "sha256": "9f9f9f9f9f9f9f9f9f9f9f9f9f9f9f9f9f9f9f9f9f9f9f9f9f9f9f9f9f9f9f9f",
+      "size_bytes": 48
+    },
+    {
+      "name": "part2.txt",
+      "sha256": "e88f257a9ddd835af56174b4e047e0a41a3f94a68f9b3b1f920390bca2f088b9",
+      "size_bytes": 44
+    }
+  ]
+}

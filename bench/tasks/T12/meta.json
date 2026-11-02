@@ -1,0 +1,9 @@
+{
+  "task": "T12",
+  "title": "哈希校验值可被独立复核",
+  "split": "heldout",
+  "axis": "verification",
+  "weight": 1,
+  "time_budget_min": 8,
+  "requires": ["python"]
+}

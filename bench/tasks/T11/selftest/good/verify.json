@@ -1,0 +1,6 @@
+{
+  "count": 5,
+  "total": 602,
+  "command": "python -c \"import csv; rows=[r for r in csv.reader(open('input/data.csv', encoding='utf-8')) if len(r) > 1 and r[1].strip().isdigit()]; print('count=%d total=%d' % (len(rows), sum(int(r[1]) for r in rows)))\"",
+  "output": "count=5 total=602"
+}

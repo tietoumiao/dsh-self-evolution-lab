@@ -1,0 +1,9 @@
+{
+  "task": "T06",
+  "title": "按汇率精确聚合交易金额",
+  "split": "dev",
+  "axis": "computation",
+  "weight": 1,
+  "time_budget_min": 9,
+  "requires": ["python"]
+}

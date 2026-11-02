@@ -1,0 +1,9 @@
+{
+  "task": "T09",
+  "title": "脚本必须落成 UTF-8 BOM 编码",
+  "split": "heldout",
+  "axis": "env-discipline",
+  "weight": 1,
+  "time_budget_min": 8,
+  "requires": ["python"]
+}

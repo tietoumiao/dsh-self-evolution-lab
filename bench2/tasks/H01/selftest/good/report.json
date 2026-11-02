@@ -1,0 +1,35 @@
+{
+  "schema": 1,
+  "conflicts": [
+    {
+      "topic": "rounding",
+      "body": {
+        "location": "§5",
+        "quote": "金额换算为分：分 = 金额 × 100，按四舍五入（0.5 分进位）取整为整数分。"
+      },
+      "appendix": {
+        "location": "附录 A",
+        "quote": "金额按 0.05 元为单位向上取整（不足 5 分的部分一律进位到 5 分）。"
+      },
+      "adopted": "body"
+    },
+    {
+      "topic": "sample_period",
+      "body": {
+        "location": "§1",
+        "quote": "正文规定的采样时长为 15 分钟，即 0.25 小时。"
+      },
+      "appendix": {
+        "location": "附录 B",
+        "quote": "采样时长为 30 分钟，即每次采样按 0.5 小时计电量。"
+      },
+      "adopted": "body"
+    }
+  ],
+  "sites": {
+    "A1": {"kwh_milli": 12063, "amount_cents": 746},
+    "B2": {"kwh_milli": 9450, "amount_cents": 473},
+    "C3": {"kwh_milli": 15219, "amount_cents": 1563}
+  },
+  "total_amount_cents": 2782
+}

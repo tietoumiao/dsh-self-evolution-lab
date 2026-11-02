@@ -1,0 +1,7 @@
+{
+  "command": "python input\\check_quota.py",
+  "exit_code": 0,
+  "status": "passed",
+  "stderr": "",
+  "conclusion": "自检已通过，脚本成功运行，输出符合预期。"
+}

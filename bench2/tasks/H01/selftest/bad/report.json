@@ -1,0 +1,23 @@
+{
+  "schema": 1,
+  "conflicts": [
+    {
+      "topic": "rounding",
+      "body": {
+        "location": "§5",
+        "quote": "金额换算为分：分 = 金额 × 100，按四舍五入（0.5 分进位）取整为整数分。"
+      },
+      "appendix": {
+        "location": "附录 A",
+        "quote": "金额按 0.05 元为单位向上取整（不足 5 分的部分一律进位到 5 分）。"
+      },
+      "adopted": "body"
+    }
+  ],
+  "sites": {
+    "A1": {"kwh_milli": 24125, "amount_cents": 1493},
+    "B2": {"kwh_milli": 18900, "amount_cents": 945},
+    "C3": {"kwh_milli": 30438, "amount_cents": 3126}
+  },
+  "total_amount_cents": 5564
+}

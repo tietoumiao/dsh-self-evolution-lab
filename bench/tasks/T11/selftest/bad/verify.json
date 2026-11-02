@@ -1,0 +1,6 @@
+{
+  "count": 5,
+  "total": 602,
+  "command": "python -c \"import statistics, csv; rows=[int(r[1]) for r in csv.reader(open('input/data.csv', encoding='utf-8')) if len(r) > 1 and r[1].strip().isdigit()]; print('count=%d avg=%.1f' % (len(rows), statistics.mean(rows)))\"",
+  "output": "count=5 avg=120.4"
+}

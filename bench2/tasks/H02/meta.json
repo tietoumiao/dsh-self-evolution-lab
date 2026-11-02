@@ -1,0 +1,10 @@
+{
+  "task": "H02",
+  "title": "三份材料对账：唯一不一致字段 + 精确差异报告 + 按 schema 修正",
+  "split": "dev",
+  "axis": "cross-file",
+  "weight": 1,
+  "time_budget_min": 10,
+  "requires": ["python"],
+  "hardness": "cross-file"
+}

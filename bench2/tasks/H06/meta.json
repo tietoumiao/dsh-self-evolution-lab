@@ -1,0 +1,10 @@
+{
+  "task": "H06",
+  "title": "多币种多税率的十进制精确报表",
+  "split": "heldout",
+  "axis": "precision",
+  "weight": 1,
+  "time_budget_min": 12,
+  "requires": ["python"],
+  "hardness": "precision"
+}

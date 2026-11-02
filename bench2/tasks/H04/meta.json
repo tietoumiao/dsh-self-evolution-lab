@@ -1,0 +1,10 @@
+{
+  "task": "H04",
+  "title": "逐字节报表流水线",
+  "split": "heldout",
+  "axis": "long-pipeline",
+  "weight": 1,
+  "time_budget_min": 12,
+  "requires": ["python"],
+  "hardness": "long-pipeline"
+}

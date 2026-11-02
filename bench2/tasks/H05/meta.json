@@ -1,0 +1,10 @@
+{
+  "task": "H05",
+  "title": "修好吞数据的汇总脚本",
+  "split": "heldout",
+  "axis": "tool-failure",
+  "weight": 1,
+  "time_budget_min": 12,
+  "requires": ["python"],
+  "hardness": "tool-failure"
+}

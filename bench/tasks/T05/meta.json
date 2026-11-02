@@ -1,0 +1,9 @@
+{
+  "task": "T05",
+  "title": "计算作业依赖图的关键路径",
+  "split": "dev",
+  "axis": "computation",
+  "weight": 1,
+  "time_budget_min": 9,
+  "requires": ["python"]
+}

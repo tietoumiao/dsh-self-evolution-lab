@@ -1,0 +1,10 @@
+{
+  "task": "H01",
+  "title": "结算规则正文与附录冲突：显式列冲突并按正文结算",
+  "split": "dev",
+  "axis": "conflict",
+  "weight": 1,
+  "time_budget_min": 10,
+  "requires": ["python"],
+  "hardness": "conflict"
+}

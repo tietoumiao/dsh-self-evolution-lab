@@ -1,0 +1,7 @@
+{
+  "max_connections": 100,
+  "retry_timeout_ms": 3000,
+  "queue_capacity": 4096,
+  "shard_count": 8,
+  "batch_size": 256
+}
