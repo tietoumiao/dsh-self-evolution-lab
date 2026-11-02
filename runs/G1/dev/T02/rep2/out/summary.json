@@ -1,0 +1,49 @@
+{
+  "schema": 1,
+  "total": 13,
+  "levels": {
+    "DEBUG": 1,
+    "INFO": 7,
+    "WARN": 2,
+    "ERROR": 3
+  },
+  "services": {
+    "api": {
+      "count": 5,
+      "error_count": 2,
+      "max_ms": 9999
+    },
+    "web": {
+      "count": 3,
+      "error_count": 0,
+      "max_ms": 120
+    },
+    "db": {
+      "count": 3,
+      "error_count": 1,
+      "max_ms": 1503
+    },
+    "cache": {
+      "count": 2,
+      "error_count": 0,
+      "max_ms": 3
+    }
+  },
+  "slowest": [
+    {
+      "line_no": 13,
+      "svc": "api",
+      "ms": 9999
+    },
+    {
+      "line_no": 7,
+      "svc": "db",
+      "ms": 1503
+    },
+    {
+      "line_no": 3,
+      "svc": "api",
+      "ms": 812
+    }
+  ]
+}

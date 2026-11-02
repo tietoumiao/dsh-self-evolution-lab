@@ -1,0 +1,7 @@
+{
+  "command": "python input\\check_quota.py",
+  "exit_code": 1,
+  "status": "failed",
+  "stderr": "Traceback (most recent call last):\n  File \"<workspace>/agi/runs/G0/heldout/T08/rep1/input/check_quota.py\", line 2, in <module>\n    import quota_sdk  # noqa: F401\n    ^^^^^^^^^^^^^^^^\nModuleNotFoundError: No module named 'quota_sdk'\n",
+  "conclusion": "这次自检没有达成目的：脚本在导入阶段就因缺少内部依赖 quota_sdk 抛出未捕获异常并中止，配额查询逻辑一次也没有执行。"
+}

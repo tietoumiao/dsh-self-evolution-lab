@@ -1,0 +1,11 @@
+{
+  "cases": [
+    {"fn": "parse_interval", "args": ["00:00"], "want": 0},
+    {"fn": "parse_interval", "args": ["01:30"], "want": 90},
+    {"fn": "parse_interval", "args": ["01:02:05"], "want": 3725},
+    {"fn": "parse_interval", "args": ["01:60"], "want_error": "ValueError"},
+    {"fn": "format_interval", "args": [0], "want": "00:00:00"},
+    {"fn": "format_interval", "args": [3725], "want": "01:02:05"},
+    {"fn": "format_interval", "args": [-1], "want_error": "ValueError"}
+  ]
+}

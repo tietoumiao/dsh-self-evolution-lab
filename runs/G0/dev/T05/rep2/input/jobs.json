@@ -1,0 +1,12 @@
+{
+  "jobs": [
+    {"id": "A", "duration": 3, "deps": []},
+    {"id": "B", "duration": 2, "deps": ["A"]},
+    {"id": "C", "duration": 4, "deps": ["A"]},
+    {"id": "D", "duration": 1, "deps": ["B", "C"]},
+    {"id": "E", "duration": 5, "deps": ["B"]},
+    {"id": "F", "duration": 2, "deps": ["D", "E"]},
+    {"id": "G", "duration": 3, "deps": ["F", "C"]},
+    {"id": "H", "duration": 1, "deps": ["G"]}
+  ]
+}

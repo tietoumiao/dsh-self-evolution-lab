@@ -1,0 +1,65 @@
+{
+  "version": "1.0",
+  "frozen": "2026-11-02",
+  "ruleset": "2026-11-02.v1",
+  "note": "claim/why/source 的唯一真源是 rules\\R*.md；本文件是清单（id/axis/去向/来源），test_apply.py 会逐字段核对两处一致，防止两源漂移。",
+  "rules": [
+    {
+      "id": "R01",
+      "axis": "env-discipline",
+      "in": ["G1", "G2"],
+      "claim": "写任何文本产物都显式指定编码（UTF-8）：读用显式解码、写用显式编码；改 .ps1 后补回 UTF-8 BOM，并跑一次 ParseFile 复核语法。",
+      "source": "skills\\powershell-51-pitfalls\\SKILL.md §1 第 1 条「必须补回 UTF-8 BOM」「PS 5.1 按 GBK 解码无 BOM 的 UTF-8」；§4 Gotchas「读任何带本地化消息的 UTF-8 文件都要显式指定编码」"
+    },
+    {
+      "id": "R02",
+      "axis": "verification",
+      "in": ["G1", "G2"],
+      "claim": "判成功只认能观测目标效果的检查（读回产物、比对数值、跑断言）；脚本打印 O.K.、日志写成功、exit 0 都不算成功。",
+      "source": "skills\\handoff-self-check\\SKILL.md §2「都不等于成功」；skills\\supervision-gates\\SKILL.md §2「只认这一条」「其余一律判失败」"
+    },
+    {
+      "id": "R03",
+      "axis": "env-discipline",
+      "in": ["G1", "G2"],
+      "claim": "只写任务书点名授权的路径与文件名；输入文件只读不改。改前先读当前内容，出现「文件已被改动」就重读后重放增量。",
+      "source": "skills\\handoff-self-check\\SKILL.md §5「写入范围以任务书为准」；skills\\execution-discipline\\SKILL.md §3 B「并确认自上次读取后未被改动」「不许强写」"
+    },
+    {
+      "id": "R04",
+      "axis": "honesty",
+      "in": ["G1", "G2"],
+      "claim": "材料里没给的数据写「未给出」（或任务书指定的空值），不推算、不补默认值、不猜；产物里每个数字都要能指回输入的出处。",
+      "source": "skills\\prompt-engineering\\SKILL.md §1.3「不编造数值、不假设、不加未被要求的东西」；§3「源里没有就给 null，不要猜」"
+    },
+    {
+      "id": "R05",
+      "axis": "spec",
+      "in": ["G1", "G2"],
+      "claim": "交前把交付契约抄成逐项清单（文件名/键名/类型/取值/是否允许多余键），按任务书原文拼写逐项核对；多余键只在任务书允许时才加。",
+      "source": "skills\\prompt-engineering\\SKILL.md §1.2「把输出形状钉死」；§3「按此 schema 输出，不要多字段」；§7「输出形状有可判定的验收标准」"
+    },
+    {
+      "id": "R06",
+      "axis": "verification",
+      "in": ["G1", "G2"],
+      "claim": "声称完成前重跑一遍任务书要求的检查命令，把原样 stdout 与退出码贴进答复；没跑或跑不出来就写「未验证」，不写「应该没问题」。",
+      "source": "skills\\handoff-self-check\\SKILL.md §2「已实测」「贴不出来就降级为」；skills\\supervision-gates\\SKILL.md §4 Gotchas「原始输出行」"
+    },
+    {
+      "id": "R07",
+      "axis": "computation",
+      "in": ["G1", "G2"],
+      "claim": "数值类结果用可重跑的脚本算，不心算；再用输入里的边界样本（空值、0、最大项、缺字段）各跑一次，把结论写进产物。",
+      "source": "skills\\prompt-engineering\\SKILL.md §7「至少在 1 个边界输入上看过它的失败方式」"
+    }
+  ],
+  "process_blocks": [
+    {
+      "id": "P01",
+      "in": ["G2"],
+      "summary": "两遍自检：先做完 → 按交付契约逐项自检并列最可能的 3 个失败点 → 逐条修 → 重跑判据 → 回复里单列「自检」一节。",
+      "source": "skills\\handoff-self-check\\SKILL.md §2；skills\\supervision-gates\\SKILL.md §2；skills\\prompt-engineering\\SKILL.md §2"
+    }
+  ]
+}

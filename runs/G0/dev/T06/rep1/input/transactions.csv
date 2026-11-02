@@ -1,0 +1,9 @@
+txn_id,account,date,currency,amount_cents,fx_rate
+T001,acct-north,2026-01-05,EUR,12500,1.0875
+T002,acct-north,2026-01-19,GBP,4300,1.2650
+T003,acct-south,2026-02-02,EUR,999,1.0875
+T004,acct-south,2026-02-11,USD,20000,1.0000
+T005,acct-north,2026-02-23,EUR,7250,1.0890
+T006,acct-east,2026-03-01,GBP,1500,1.2650
+T007,acct-east,2026-03-14,EUR,4550,1.0910
+T008,acct-south,2026-03-14,EUR,4550,1.0910

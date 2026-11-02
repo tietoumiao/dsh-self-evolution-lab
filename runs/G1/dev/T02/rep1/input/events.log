@@ -1,0 +1,17 @@
+# service log excerpt
+2026-03-01T08:00:01Z INFO svc=api code=200 ms=37
+2026-03-01T08:00:07Z ERROR svc=api code=500 ms=812
+2026-03-01T08:00:19Z INFO svc=web code=200 ms=45
+2026-03-01T08:00:23Z WARN svc=web code=429 ms=120
+2026-03-01T08:00:31Z INFO svc=db code=200 ms=9
+2026-03-01T08:01:02Z ERROR svc=db code=503 ms=1503
+2026-03-01T08:01:11Z INFO svc=api code=200 ms=61
+2026-03-01T08:01:17Z INFO svc=cache code=200 ms=3
+2026-03-01T08:01:29Z DEBUG svc=cache code=200 ms=2
+2026-03-01T08:01:35Z WARN svc=api code=404 ms=88
+2026-03-01T08:01:44Z INFO svc=web code=200 ms=52
+2026-03-02T09:00:00Z ERROR svc=api code=502 ms=9999
+2026-03-02T09:00:05Z INFO svc=db code=200 ms=14
+2026-03-02T09:00:09Z INFO
+2026-03-02T09:00:11Z TRACE svc=web code=200 ms=7
+2026-03-02T09:00:15Z INFO svc=web code=200 ms=12 extra=1

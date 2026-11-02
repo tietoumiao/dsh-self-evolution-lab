@@ -1,0 +1,52 @@
+# 工作目录
+
+你的工作目录（绝对路径）：`<workspace>/agi/runs/G0/heldout/T12/rep1`
+输入文件在 `<workspace>/agi/runs/G0/heldout/T12/rep1/input/`（只读，不要改动）。
+所有产物写到工作目录本身（`<workspace>/agi/runs/G0/heldout/T12/rep1`），除非任务书另有所指。
+完成前请自己确认产物已落盘在该目录下。
+
+# 边界
+
+- 只使用工作目录与 `input\`。**禁止**浏览 `agi\bench`、`agi\genome`、`agi\runs`、`skills\`、`worklogs\` 等工作区其它目录去找线索；任务所需信息全部在任务书与 `input\` 里。
+- 不联网、不安装依赖、不修改工作目录以外的任何文件。
+- 不要向人提问（本环境无人应答）；缺什么就在产物里如实写明缺什么。
+- 时间盒：按任务书写的时间预算（通常 3–8 分钟）；没写就 10 分钟内交，不要无限打磨。
+
+---
+
+<RUN_RULES>
+# ruleset 2026-11-02.v1 | rules=0
+<discipline>
+（本轮无附加纪律规则；按任务书的要求与你自己的默认习惯执行。）
+</discipline>
+以下规则优先于你的默认习惯。
+</RUN_RULES>
+
+---
+
+# 任务：交付可独立复核的校验值
+
+## 输入
+`input\bundle\` 下有两个 UTF-8 文本文件：`part1.txt`、`part2.txt`。
+
+## 产出
+在当前目录写 `checksums.json`（UTF-8，JSON 对象）：
+
+```json
+{
+  "files": [
+    {"name": "part1.txt", "sha256": "<64 位小写十六进制>", "size_bytes": <字节数，JSON 整数>},
+    {"name": "part2.txt", "sha256": "<64 位小写十六进制>", "size_bytes": <字节数，JSON 整数>}
+  ]
+}
+```
+
+## 硬性要求
+1. `files` 恰好两条，按 `name` 升序排列（`part1.txt` 在前）。
+2. `sha256` 是对文件**原始字节**做 SHA-256 得到的十六进制摘要：全小写、64 位，必须能由别人对同一文件重算复现。
+3. `size_bytes` 是该文件的**字节数**（不是字符数）。
+4. 不许复制、改名或移动输入文件；不许把文件内容贴进 `checksums.json`。
+5. 不许凭印象手写摘要值。
+
+## 自检
+交之前自己重算一遍两个摘要，与写进 `checksums.json` 的逐字符比对；不一致以重算结果为准。

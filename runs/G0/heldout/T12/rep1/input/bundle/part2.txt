@@ -1,0 +1,3 @@
+分片二：网关日志
+GW1=ok
+GW2=timeout

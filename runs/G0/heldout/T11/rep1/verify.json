@@ -1,0 +1,6 @@
+{
+  "count": 5,
+  "total": 602,
+  "command": "python -c \"import csv;rows=[r for r in csv.reader(open('input/data.csv',encoding='utf-8')) if r and not r[0].strip().startswith('#')];vals=[int(r[1]) for r in rows[1:] if len(r)>1 and r[1].strip()!=''];print('count=%d total=%d'%(len(vals),sum(vals)))\"",
+  "output": "count=5 total=602"
+}
