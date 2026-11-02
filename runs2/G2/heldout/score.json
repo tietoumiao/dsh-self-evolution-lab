@@ -1,0 +1,46 @@
+{
+  "genome": "G2",
+  "split": "heldout",
+  "n": 3,
+  "pass": 2,
+  "weighted_pass": 2.0,
+  "weighted_total": 3.0,
+  "per_task": [
+    {
+      "task": "H04",
+      "rep": 1,
+      "pass": true,
+      "score": 1.0,
+      "error": null
+    },
+    {
+      "task": "H05",
+      "rep": 1,
+      "pass": false,
+      "score": 0.0,
+      "error": null
+    },
+    {
+      "task": "H06",
+      "rep": 1,
+      "pass": true,
+      "score": 1.0,
+      "error": null
+    }
+  ],
+  "per_axis": {
+    "long-pipeline": {
+      "pass": 1,
+      "total": 1
+    },
+    "tool-failure": {
+      "pass": 0,
+      "total": 1
+    },
+    "precision": {
+      "pass": 1,
+      "total": 1
+    }
+  },
+  "grader_errors": 0
+}

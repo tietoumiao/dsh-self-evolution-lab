@@ -1,0 +1,33 @@
+{
+  "genome": "G2",
+  "split": "dev",
+  "genome_sha256": "b95a6c8e04402f2ba45ed61cc14e16d79dcd86767034f6a9890659de633a2d44",
+  "genome_chars": 798,
+  "reps": 1,
+  "runs": [
+    {
+      "task": "H01",
+      "rep": 1,
+      "axis": "conflict",
+      "weight": 1,
+      "run_dir": "<workspace>/agi/runs2/G2/dev/H01/rep1",
+      "run_dir_rel": "agi/runs2/G2/dev/H01/rep1"
+    },
+    {
+      "task": "H02",
+      "rep": 1,
+      "axis": "cross-file",
+      "weight": 1,
+      "run_dir": "<workspace>/agi/runs2/G2/dev/H02/rep1",
+      "run_dir_rel": "agi/runs2/G2/dev/H02/rep1"
+    },
+    {
+      "task": "H03",
+      "rep": 1,
+      "axis": "broken-test",
+      "weight": 1,
+      "run_dir": "<workspace>/agi/runs2/G2/dev/H03/rep1",
+      "run_dir_rel": "agi/runs2/G2/dev/H03/rep1"
+    }
+  ]
+}
