@@ -1,0 +1,10 @@
+order_id,currency,category,net_cents
+O-1001,CNY,food,1050
+O-1002,USD,gadget,1500
+O-1003,EUR,service,4200
+O-1004,JPY,book,5000
+O-1005,CNY,gadget,-1050
+O-1006,CNY,service,200
+O-1007,USD,food,250
+O-1008,EUR,gadget,2500
+O-1009,JPY,service,1234

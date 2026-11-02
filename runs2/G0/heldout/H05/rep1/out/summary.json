@@ -1,0 +1,26 @@
+{
+  "amount_total": 909300,
+  "by_category": {
+    "咖啡豆": {
+      "amount": 88300,
+      "qty": 10,
+      "rows": 4
+    },
+    "礼盒,精品": {
+      "amount": 594000,
+      "qty": 4,
+      "rows": 3
+    },
+    "茶叶": {
+      "amount": 189500,
+      "qty": 15,
+      "rows": 4
+    },
+    "陶瓷杯": {
+      "amount": 37500,
+      "qty": 5,
+      "rows": 3
+    }
+  },
+  "rows_total": 14
+}

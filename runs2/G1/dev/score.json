@@ -1,0 +1,46 @@
+{
+  "genome": "G1",
+  "split": "dev",
+  "n": 3,
+  "pass": 3,
+  "weighted_pass": 3.0,
+  "weighted_total": 3.0,
+  "per_task": [
+    {
+      "task": "H01",
+      "rep": 1,
+      "pass": true,
+      "score": 1.0,
+      "error": null
+    },
+    {
+      "task": "H02",
+      "rep": 1,
+      "pass": true,
+      "score": 1.0,
+      "error": null
+    },
+    {
+      "task": "H03",
+      "rep": 1,
+      "pass": true,
+      "score": 1.0,
+      "error": null
+    }
+  ],
+  "per_axis": {
+    "conflict": {
+      "pass": 1,
+      "total": 1
+    },
+    "cross-file": {
+      "pass": 1,
+      "total": 1
+    },
+    "broken-test": {
+      "pass": 1,
+      "total": 1
+    }
+  },
+  "grader_errors": 0
+}

@@ -1,0 +1,17 @@
+line_id|region|sku|status|qty|unit_cents|label
+L01|r07|42|paid|3|12050|Alpha　Beta
+L02|R07|713|Paid|2|18075|Gamma Delta
+L03|r07|A12|refunded|1|-4500|Zeta
+
+L04|r07|008|paid|0|999|Zero Qty
+L05|Ｒ０９|５|paid|１２|１２３４|Full Width
+L06|R09|5|paid|1|0|Zero Unit
+L07|R09|B2|cancelled|5|100|Cancelled
+L08|R02|77|paid|4|25000|Omega Team
+L09|R02|9|paid|2|50000|Kappa
+L10|R02|12|paid|3|12.5|Bad Unit
+L11|R02|12|paid|3|100
+L12|r02|13|refunded|1|-25000|Refund Row
+L13|R02|14|paid|-1|400|Neg Qty
+L14|R09|B2|paid|2|3333|Tau　
+

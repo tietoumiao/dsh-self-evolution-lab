@@ -1,0 +1,33 @@
+{
+  "genome": "G1",
+  "split": "heldout",
+  "genome_sha256": "6d3cab91d524eae91f06ca9c8edf506bf68c436ae8d2e81b075282c3e935f3d4",
+  "genome_chars": 581,
+  "reps": 1,
+  "runs": [
+    {
+      "task": "H04",
+      "rep": 1,
+      "axis": "long-pipeline",
+      "weight": 1,
+      "run_dir": "<workspace>/agi/runs2/G1/heldout/H04/rep1",
+      "run_dir_rel": "agi/runs2/G1/heldout/H04/rep1"
+    },
+    {
+      "task": "H05",
+      "rep": 1,
+      "axis": "tool-failure",
+      "weight": 1,
+      "run_dir": "<workspace>/agi/runs2/G1/heldout/H05/rep1",
+      "run_dir_rel": "agi/runs2/G1/heldout/H05/rep1"
+    },
+    {
+      "task": "H06",
+      "rep": 1,
+      "axis": "precision",
+      "weight": 1,
+      "run_dir": "<workspace>/agi/runs2/G1/heldout/H06/rep1",
+      "run_dir_rel": "agi/runs2/G1/heldout/H06/rep1"
+    }
+  ]
+}

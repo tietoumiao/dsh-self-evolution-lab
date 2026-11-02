@@ -1,0 +1,22 @@
+# summary v1
+regions=3 rows=9
+== R02 ==
+rows  : 3
+total : 1,750.00
+max   : 1,000.00
+first : Kappa
+skus  : 00009,00077,00013
+== R07 ==
+rows  : 3
+total : 678.00
+max   : 361.50
+first : Gamma Delta
+skus  : 00713,00042,A12
+== R09 ==
+rows  : 3
+total : 214.74
+max   : 148.08
+first : Full Width
+skus  : 00005,B2,00005
+--
+grand_total=2,642.74

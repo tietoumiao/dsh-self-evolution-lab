@@ -1,0 +1,74 @@
+[
+  {
+    "order_id": "O-1001",
+    "currency": "CNY",
+    "net_cents": 1050,
+    "tax_cents": 137,
+    "gross_cents": 1187,
+    "cny_gross_cents": 1187
+  },
+  {
+    "order_id": "O-1002",
+    "currency": "USD",
+    "net_cents": 1500,
+    "tax_cents": 107,
+    "gross_cents": 1607,
+    "cny_gross_cents": 11447
+  },
+  {
+    "order_id": "O-1003",
+    "currency": "EUR",
+    "net_cents": 4200,
+    "tax_cents": 347,
+    "gross_cents": 4547,
+    "cny_gross_cents": 35876
+  },
+  {
+    "order_id": "O-1004",
+    "currency": "JPY",
+    "net_cents": 5000,
+    "tax_cents": 0,
+    "gross_cents": 5000,
+    "cny_gross_cents": 241
+  },
+  {
+    "order_id": "O-1005",
+    "currency": "CNY",
+    "net_cents": -1050,
+    "tax_cents": -75,
+    "gross_cents": -1125,
+    "cny_gross_cents": -1125
+  },
+  {
+    "order_id": "O-1006",
+    "currency": "CNY",
+    "net_cents": 200,
+    "tax_cents": 17,
+    "gross_cents": 217,
+    "cny_gross_cents": 217
+  },
+  {
+    "order_id": "O-1007",
+    "currency": "USD",
+    "net_cents": 250,
+    "tax_cents": 33,
+    "gross_cents": 283,
+    "cny_gross_cents": 2016
+  },
+  {
+    "order_id": "O-1008",
+    "currency": "EUR",
+    "net_cents": 2500,
+    "tax_cents": 178,
+    "gross_cents": 2678,
+    "cny_gross_cents": 21130
+  },
+  {
+    "order_id": "O-1009",
+    "currency": "JPY",
+    "net_cents": 1234,
+    "tax_cents": 102,
+    "gross_cents": 1336,
+    "cny_gross_cents": 64
+  }
+]
